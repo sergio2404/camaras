@@ -69,13 +69,15 @@
     <div id="camera-container" class="grid-container"></div>
 
     <script>
-        // Función inteligente para sacar el ID de cualquier link de YouTube
+              // Función inteligente actualizada para detectar también los links /live/
         function extraerIdYoutube(url) {
             if (url.length === 11 && !url.includes('/')) return url;
-            const regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            // Se añadió "live\/" a la lista de formatos reconocidos
+            const regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|live\/)([^#\&\?]*).*/;
             const coincidencia = url.match(regex);
             return (coincidencia && coincidencia[2].length === 11) ? coincidencia[2] : url;
         }
+
 
         // Función que lee config.js y dibuja la página
         function cargarCamaras() {
