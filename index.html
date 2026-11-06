@@ -47,6 +47,32 @@
             background-color: #111;
         }
 
+        /* Estilos para el pie de página y el botón de caché */
+        .footer-controls {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333; /* Una línea sutil para separar los videos del botón */
+        }
+
+        .btn-reload {
+            background-color: #d93025;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-reload:hover { 
+            background-color: #b3261d; 
+        }
+
         @media (max-width: 480px) {
             .grid-container {
                 grid-template-columns: 1fr;
@@ -64,10 +90,14 @@
 
     <div id="camera-container" class="grid-container"></div>
 
+    <!-- Pie de página con el botón -->
+    <div class="footer-controls">
+        <button class="btn-reload" onclick="borrarCacheYRecargar()">🗑️ Borrar caché y Recargar</button>
+    </div>
+
     <script>
         function extraerIdYoutube(url) {
             if (url.length === 11 && !url.includes('/')) return url;
-            // Se actualizó para reconocer "live/"
             const regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|live\/)([^#\&\?]*).*/;
             const coincidencia = url.match(regex);
             return (coincidencia && coincidencia[2].length === 11) ? coincidencia[2] : url;
@@ -81,7 +111,6 @@
                 
                 if (cam.tipo === 'youtube') {
                     const videoId = extraerIdYoutube(cam.enlace);
-                    // Se agregó playsinline=1 y se reforzó allow="autoplay"
                     htmlIframe = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
                 } else {
                     htmlIframe = `<iframe src="${cam.enlace}" scrolling="no" allowfullscreen="true"></iframe>`;
@@ -95,6 +124,13 @@
                 `;
                 contenedor.appendChild(caja);
             });
+        }
+
+        // Función para forzar la recarga saltándose la caché
+        function borrarCacheYRecargar() {
+            // Añade un parámetro único (la hora exacta) a la URL para obligar al navegador a descargar todo de nuevo
+            const urlSinParametros = window.location.href.split('?')[0];
+            window.location.href = urlSinParametros + '?nocache=' + new Date().getTime();
         }
 
         window.onload = cargarCamaras;
