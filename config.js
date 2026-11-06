@@ -14,7 +14,7 @@ const camarasConfig = [
     { 
         nombre: "Viña del Mar", 
         tipo: "youtube", 
-        enlace: "https://www.youtube.com/live/F57ENlfm-ww?si=lEkNTNZKuGUxbYh8" 
+        enlace: "https://www.youtube.com/live/mxirpLYPG3U?si=axvvhO7sqew6s0Ho" 
     },
     { 
         nombre: "El Quisco", 
