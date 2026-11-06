@@ -1,56 +1,81 @@
 <!DOCTYPE html>
-<html>
-<meta name="theme-color" content="#000000">
-<link rel="icon" type="image/png" href="camara.png">
-<style>
-body {
-    	background: #000000;
-	font-family: Plus Jakarta Sans, sans-serif;
-}
-div {
-	margin: 5px;
-	display: inline-block;
-	vertical-align: bottom;
-}
-html {
-    color: #fff;
-}
-</style>
+<html lang="es">
 <head>
-<title>Cámaras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Cámaras</title>
+    <link rel="icon" type="image/png" href="camara.png">
+    
+    <style>
+        body {
+            background: #000000;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        div {
+            margin: 10px;
+            display: inline-block;
+            vertical-align: bottom;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        /* Asegura que los videos se adapten al tamaño de la pantalla */
+        iframe {
+            max-width: 100%;
+            border-radius: 4px; /* Opcional: suaviza los bordes de los reproductores */
+            box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+        }
+    </style>
 </head>
 <body>
-<div>
-La Serena<br>
-<iframe width="750" height="452" src="https://www.youtube.com/embed/S-yZwnKlMsY?si=-8l5b8m-iCTDfOKE&autoplay=1&mute=1;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div>
-Valparaíso<br>
-<iframe width="750" height="452" src="https://www.youtube.com/embed/5jPpMkg5daM?si=U3oaLVBD_ERQle-M&autoplay=1&mute=1;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div>
-Viña del Mar<br>
-<iframe width="750" height="452" src="https://www.youtube.com/embed/ysqxSxIqiq0?si=xGqUKtoE6s2QWb6e&autoplay=1&mute=1;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div>
-El Quisco<br>
-<iframe width="750" height="452" src="https://www.youtube.com/embed/8mGoV-mbwTk?si=-I2Lbp5tFdknrlWC&autoplay=1&mute=1;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div>
-San Antonio<br>
-<iframe width="750" height="452" src="https://www.youtube.com/embed/ulBAncoXWws?si=yAaeysbcn4gIDoe5&autoplay=1&mute=1;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div>
-Llolleo<br>
-<iframe width="750" height="452" src="https://www.youtube.com/embed/U9YCYQe-VvE?si=BJ7rT1llg469yt5h&autoplay=1&mute=1;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div>
-Coquimbo<br>
-<iframe src="https://ucncamcq.ucn.cl:8181/31334bb8-688e-4b31-9024-503a2e88a7b3.html" width="750" height="497" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-</div>
-<div>
-Coquimbo<br>
-<iframe src="https://ucncamcq.ucn.cl:8181/62e76aea-0f11-4c9f-ac40-3bb6da9ff5dd.html" width="750" height="497" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-</div>
+
+    <div>
+        La Serena<br>
+        <iframe width="750" height="452" src="https://www.youtube.com/embed/S-yZwnKlMsY?si=-8l5b8m-iCTDfOKE&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        Valparaíso<br>
+        <iframe width="750" height="452" src="https://www.youtube.com/embed/5jPpMkg5daM?si=U3oaLVBD_ERQle-M&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        Viña del Mar<br>
+        <iframe width="750" height="452" src="https://www.youtube.com/embed/ysqxSxIqiq0?si=xGqUKtoE6s2QWb6e&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        El Quisco<br>
+        <iframe width="750" height="452" src="https://www.youtube.com/embed/8mGoV-mbwTk?si=-I2Lbp5tFdknrlWC&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        San Antonio<br>
+        <iframe width="750" height="452" src="https://www.youtube.com/embed/ulBAncoXWws?si=yAaeysbcn4gIDoe5&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        Llolleo<br>
+        <iframe width="750" height="452" src="https://www.youtube.com/embed/U9YCYQe-VvE?si=BJ7rT1llg469yt5h&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div>
+        Coquimbo (Cámara 1)<br>
+        <iframe src="https://ucncamcq.ucn.cl:8181/31334bb8-688e-4b31-9024-503a2e88a7b3.html" width="750" height="497" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+    </div>
+    
+    <div>
+        Coquimbo (Cámara 2)<br>
+        <iframe src="https://ucncamcq.ucn.cl:8181/62e76aea-0f11-4c9f-ac40-3bb6da9ff5dd.html" width="750" height="497" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+    </div>
+
 </body>
 </html>
