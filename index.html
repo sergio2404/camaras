@@ -22,7 +22,6 @@
             font-size: 24px;
         }
 
-        /* Contenedor Grid */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -30,7 +29,6 @@
             align-items: start;
         }
 
-        /* Caja de cámara */
         .cam-box {
             display: flex;
             flex-direction: column;
@@ -39,7 +37,6 @@
             font-size: 15px;
         }
 
-        /* Videos */
         iframe {
             width: 100%;
             height: auto;
@@ -57,7 +54,7 @@
         }
     </style>
 
-    <!-- AQUÍ SE CARGA EL ARCHIVO EXTERNO DE CONFIGURACIÓN -->
+    <!-- Enlace al archivo de configuración -->
     <script src="config.js"></script>
 
 </head>
@@ -65,31 +62,27 @@
 
     <h1>Monitoreo de Cámaras</h1>
 
-    <!-- Contenedor vacío donde se generarán las cámaras -->
     <div id="camera-container" class="grid-container"></div>
 
     <script>
-              // Función inteligente actualizada para detectar también los links /live/
         function extraerIdYoutube(url) {
             if (url.length === 11 && !url.includes('/')) return url;
-            // Se añadió "live\/" a la lista de formatos reconocidos
+            // Se actualizó para reconocer "live/"
             const regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|live\/)([^#\&\?]*).*/;
             const coincidencia = url.match(regex);
             return (coincidencia && coincidencia[2].length === 11) ? coincidencia[2] : url;
         }
 
-
-        // Función que lee config.js y dibuja la página
         function cargarCamaras() {
             const contenedor = document.getElementById('camera-container');
             
-            // camarasConfig viene directamente del archivo config.js
             camarasConfig.forEach(cam => {
                 let htmlIframe = '';
                 
                 if (cam.tipo === 'youtube') {
                     const videoId = extraerIdYoutube(cam.enlace);
-                    htmlIframe = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    // Se agregó playsinline=1 y se reforzó allow="autoplay"
+                    htmlIframe = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
                 } else {
                     htmlIframe = `<iframe src="${cam.enlace}" scrolling="no" allowfullscreen="true"></iframe>`;
                 }
@@ -104,7 +97,6 @@
             });
         }
 
-        // Cargar todo al abrir la página
         window.onload = cargarCamaras;
     </script>
 </body>
