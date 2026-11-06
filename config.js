@@ -24,7 +24,7 @@ const camarasConfig = [
     { 
         nombre: "Cartagenas", 
         tipo: "youtube", 
-        enlace: "obYSVVM7RB0?si=FS6TgDQ4rgxnZmKx" 
+        enlace: "https://www.youtube.com/live/obYSVVM7RB0?si=DsCvNqaasPZwZmX8" 
     },
     { 
         nombre: "Llolleo", 
