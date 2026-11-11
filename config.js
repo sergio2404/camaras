@@ -27,6 +27,11 @@ const camarasConfig = [
         enlace: "https://www.youtube.com/live/obYSVVM7RB0?si=DsCvNqaasPZwZmX8" 
     },
     { 
+        nombre: "El Quisco", 
+        tipo: "youtube", 
+        enlace: "https://www.youtube.com/live/yFr77Tpcvrg?si=fDBfqMoPoZMj7e1B" 
+    },
+    { 
         nombre: "Llolleo", 
         tipo: "youtube", 
         enlace: "https://www.youtube.com/watch?v=U9YCYQe-VvE" 
